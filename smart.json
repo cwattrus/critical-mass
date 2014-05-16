@@ -1,5 +1,8 @@
 {
   "packages": {
-    "iron-router": {}
+    "iron-router": {},
+    "bourbon": {},
+    "scss": {},
+    "neat": {}
   }
 }
