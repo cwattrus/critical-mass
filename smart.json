@@ -3,6 +3,7 @@
     "iron-router": {},
     "bourbon": {},
     "scss": {},
-    "neat": {}
+    "neat": {},
+    "pnotify": {}
   }
 }

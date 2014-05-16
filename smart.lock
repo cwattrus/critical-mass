@@ -5,7 +5,8 @@
       "iron-router": {},
       "bourbon": {},
       "scss": {},
-      "neat": {}
+      "neat": {},
+      "pnotify": {}
     },
     "packages": {
       "iron-router": {
@@ -27,6 +28,11 @@
         "git": "https://github.com/chicagogrooves/meteor-neat.git",
         "tag": "v1.5.0",
         "commit": "6c318cce1c02e822d6a340c547273b29b6379197"
+      },
+      "pnotify": {
+        "git": "https://github.com/kidovate/meteor-pnotify.git",
+        "tag": "v2.0.6",
+        "commit": "cbd0bb220d03b20b247e4a6a7bdfc3d2c8064216"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
