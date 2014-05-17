@@ -1,0 +1,10 @@
+@import "constants";
+
+.alert-danger {
+  background-color: $PRIMARY_COLOR;
+  color: #fff;
+}
+
+.ui-pnotify .ui-pnotify-container {
+  padding-left: 20px;
+}

@@ -7,5 +7,8 @@ Router.map(function() {
     path: '/',
     template: 'home'
   });
+  this.route('config', {
+    path: '/config',
+    template: 'config'
+  });
 });
-
