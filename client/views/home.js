@@ -3,3 +3,9 @@ Template.home.helpers({
     return Session.get('myAppVariable');
   }
 });
+
+Template.home.events({
+	'click #logout' : function(event, template) {
+    	Meteor.logout();
+  	}
+})

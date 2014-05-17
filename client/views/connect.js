@@ -1,6 +1,6 @@
 Template.connect.events({
   'click #connect-with-google': function(event, template) {
-    Meteor.loginWithGoogle({"forceApprovalPrompt":true},function(error) {
+    Meteor.loginWithGoogle(function(error) {
       if(error) {
         new PNotify({
           title: 'Oh No!',
@@ -12,5 +12,5 @@ Template.connect.events({
         Router.go('home');
       }
     });
-  }
+  },
 });
