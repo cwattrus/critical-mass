@@ -6,7 +6,8 @@
       "bourbon": {},
       "scss": {},
       "neat": {},
-      "pnotify": {}
+      "pnotify": {},
+      "fontawesome4": {}
     },
     "packages": {
       "iron-router": {
@@ -33,6 +34,11 @@
         "git": "https://github.com/kidovate/meteor-pnotify.git",
         "tag": "v2.0.6",
         "commit": "cbd0bb220d03b20b247e4a6a7bdfc3d2c8064216"
+      },
+      "fontawesome4": {
+        "git": "https://github.com/chrismbeckett/meteor-fontawesome4.git",
+        "tag": "v1.0.0",
+        "commit": "fe38ec775e974f0f7855d1693dc74fd4f1b4848c"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

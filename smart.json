@@ -4,6 +4,7 @@
     "bourbon": {},
     "scss": {},
     "neat": {},
-    "pnotify": {}
+    "pnotify": {},
+    "fontawesome4": {}
   }
 }
