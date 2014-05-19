@@ -4,7 +4,9 @@
     "bourbon": {},
     "scss": {},
     "neat": {},
-    "pnotify": {},
-    "fontawesome4": {}
+    "fontawesome4": {},
+    "typeahead": {},
+    "iron-router-progress": {},
+    "marked": {}
   }
 }

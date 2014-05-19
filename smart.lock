@@ -6,8 +6,10 @@
       "bourbon": {},
       "scss": {},
       "neat": {},
-      "pnotify": {},
-      "fontawesome4": {}
+      "fontawesome4": {},
+      "typeahead": {},
+      "iron-router-progress": {},
+      "marked": {}
     },
     "packages": {
       "iron-router": {
@@ -30,15 +32,25 @@
         "tag": "v1.5.0",
         "commit": "6c318cce1c02e822d6a340c547273b29b6379197"
       },
-      "pnotify": {
-        "git": "https://github.com/kidovate/meteor-pnotify.git",
-        "tag": "v2.0.6",
-        "commit": "cbd0bb220d03b20b247e4a6a7bdfc3d2c8064216"
-      },
       "fontawesome4": {
         "git": "https://github.com/chrismbeckett/meteor-fontawesome4.git",
         "tag": "v1.0.0",
         "commit": "fe38ec775e974f0f7855d1693dc74fd4f1b4848c"
+      },
+      "typeahead": {
+        "git": "https://github.com/sergeyt/meteor-typeahead.git",
+        "tag": "v0.0.9",
+        "commit": "6aa2228a7cc93e89e94520bd60f1af4e7542dfcf"
+      },
+      "iron-router-progress": {
+        "git": "https://github.com/Multiply/iron-router-progress.git",
+        "tag": "v0.3.1",
+        "commit": "3f7900feb4bb70a1289b39a1fdcd1f438c0335b3"
+      },
+      "marked": {
+        "git": "https://github.com/chuangbo/meteor-marked.git",
+        "tag": "v0.3.2",
+        "commit": "850f63135cdeb05344c420bd586fd8af9cab75df"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

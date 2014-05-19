@@ -1,4 +1,4 @@
-Pods.allow({
+Houses.allow({
   insert: function() {
     return allowAdmin();
   },

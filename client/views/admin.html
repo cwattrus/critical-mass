@@ -1,3 +1,11 @@
 <template name="admin">
-  <button id="promote-to-admin">Make user admin</button>
+	<h2>Admins</h2>
+	<input type="text" id="user_in_question" placeholder="Email...">
+  	<button id="promote-to-admin">Make user admin</button>
+  	<button id="demote-from-admin" class="secondary">Demote</button>
+  	<h2>Houses</h2>
+  	<button id="create-new-house">New House</button>
+  	{{#each houses}}
+  		{{> houseCard this}}
+  	{{/each}}
 </template>

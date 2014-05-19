@@ -1,1 +1,1 @@
-Meteor.subscribe('pods');
+Meteor.subscribe('houses');

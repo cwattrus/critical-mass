@@ -9,5 +9,15 @@
 </body>
 
 <template name="layout">
-  {{>yield}}
+	<div class="container">
+		<header>
+			<img src="/logo.png">
+			<a class="pull-right" href="#" id="logout">Logout</a>
+			<span class="twitter pull-right">
+				<i class="fa fa-twitter"></i>
+			</span>
+			<img class="profile" src="{{picture}}">
+		</header>
+	  	{{> yield}}
+  	</div>
 </template>

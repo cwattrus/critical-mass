@@ -1,0 +1,20 @@
+<template name="houseCard">
+	<div class="house-card">
+		<div class="pre">HOUSE OF</div>
+		<div class="title">{{this.name}}</div>
+		<div class="seperator"></div>
+	</div>
+</template>
+
+<template name="house">
+	<div class="house">
+		<div class="pre">HOUSE OF</div>
+		<div class="title">{{this.name}}<span id="edit-house-name" class="editable">*</span></div>	
+		<div class="seperator"></div>
+		<div class="description">
+			{{#markdown}}
+				{{this.description}}<span id="edit-house-description" class="editable">*</span>
+			{{/markdown}}
+		</div>
+	</div>
+</template>

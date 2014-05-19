@@ -3,10 +3,16 @@ Router.configure({
 });
 
 Router.onBeforeAction(function() {
+  
   if(Meteor.isClient) {
     if(!Meteor.userId()) {
       this.redirect('connect');
-
+    } else if (this.route.name == "admin" ){
+      if(Meteor.user()) {
+        if(!Meteor.user().profile.admin) {
+          this.redirect("home");
+        }  
+      }
     }
   }
 }, {except: ['connect','config']});
@@ -19,6 +25,13 @@ Router.map(function() {
   this.route('home', {
     path: '/',
     template: 'home'
+  });
+  this.route('house', {
+    path: '/house/:_id',
+    data: function() {
+      return Houses.findOne({ "_id": this.params._id });
+    },
+    template: 'house'
   });
   this.route('connect', {
     path: '/',

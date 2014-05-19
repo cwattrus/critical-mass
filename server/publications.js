@@ -1,4 +1,4 @@
-Meteor.publish('pods', function() {
-  var pods = Pods.find({});
-  return pods;
+Meteor.publish('houses', function() {
+  var houses = Houses.find({});
+  return houses;
 });

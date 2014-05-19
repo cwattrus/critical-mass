@@ -3,7 +3,9 @@ iron-router
 accounts-google
 scss
 neat
-pnotify
 fontawesome4
 accounts-password
 accounts-ui
+typeahead
+iron-router-progress
+marked
