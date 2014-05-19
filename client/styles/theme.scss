@@ -100,8 +100,9 @@ h2 {
 
 .house-card {
     border: 3px solid $SECONDARY_COLOR;
-    font-weight: 300;
+    cursor: pointer;
     display: inline-block;
+    font-weight: 300;
     margin: 20px;
     padding: 40px 24px;
     height: 400px;
@@ -123,5 +124,9 @@ h2 {
         width: 150px;
         margin: 30px auto;
         background: #8DEBD4;
+    }
+
+    &:hover {
+      border-color: $PRIMARY_COLOR;
     }
 }

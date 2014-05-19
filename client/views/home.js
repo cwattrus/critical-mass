@@ -4,6 +4,12 @@ Template.home.helpers({
   }
 });
 
+Template.houseCard.events({
+  'click .house-card' : function(event, template) {
+    Router.go('house', {_id: this._id});
+  }
+})
+
 Template.house.events({
 	'click #edit-house-name' : function(event, template) {
 		var self = this;
@@ -25,7 +31,7 @@ Template.house.events({
 		})).get().on('pnotify.confirm', function(e, notice, val) {
 			console.log(self);
 			Houses.update({"_id":self._id}, {$set: {"name": val}});
-			
+
 		    notice.cancelRemove().update({
 		        title: 'Name saved',
 		        text: 'House is now called ' + $('<div/>').text(val).html() + '.',
@@ -65,7 +71,7 @@ Template.house.events({
 		})).get().on('pnotify.confirm', function(e, notice, val) {
 			console.log(self);
 			Houses.update({"_id":self._id}, {$set: {"description": val}});
-			
+
 		    notice.cancelRemove().update({
 		        title: 'Name saved',
 		        text: 'Description for this house is now: ' + $('<div/>').text(val).html() + '.',
