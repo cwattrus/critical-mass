@@ -24,6 +24,23 @@ Template.connect.events({
   },
 });
 
+Template.welcome.events({
+  'click #start-connect': function(event, template) {
+    Meteor.loginWithGoogle(function(error) {
+      if(error) {
+        new PNotify({
+          title: 'Oh No!',
+          text: error.message,
+          type: 'error'
+        });
+      }
+      else {
+        Router.go('home');
+      }
+    });
+  }
+})
+
 Template.layout.events({
   'click #logout' : function(event, template) {
       Meteor.logout();
