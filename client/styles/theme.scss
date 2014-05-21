@@ -1,4 +1,5 @@
 @import "constants";
+@import "packages/bourbon/bourbon"; @import "packages/neat/neat";
 
 * {
     box-sizing: border-box;
@@ -44,7 +45,7 @@ input[type="text"] {
 
 .container {
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 1100px;
     width: 100%;
     min-height: 600px;
     .content {
@@ -225,4 +226,108 @@ h2 {
    -ms-animation-iteration-count: infinite;
    -ms-animation-timing-function: linear;
    -o-transition: rotate(3600deg);
+}
+
+.game-header {
+  background-color: $BACKGROUND;
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  left: 0px;
+  top: 0px;
+
+  .brand {
+    @include span-columns(3);
+    padding-left: 50px;
+
+    img {
+      position: relative;
+      cursor: pointer;
+      width: 150px;
+      -webkit-transition: width 0.4s ease-in-out;
+      -moz-transition: width 0.4s ease-in-out;
+      -o-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+      z-index: 999;
+
+      &:hover {
+        width: 160px;
+      }
+    }
+  }
+  .profile {
+    @include span-columns(6);
+    padding-top: 20px;
+
+    h2 {
+      font-size: 19pt;
+      font-weight: 300;
+      margin-top: 10px;
+    }
+
+    ul.levels {
+      list-style: none;
+
+      .level {
+
+        &.completed {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+  .stickers {
+    @include span-columns(3);
+    padding-top: 20px;
+
+    .holder {
+      background: transparent;
+      border: 1px solid gray;
+      border-radius: 24px;
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+
+      .sticker {
+        background: $ORANGE;
+        border: none;
+        border-radius: 24px;
+        display: inline-block;
+        position: relative;
+        width: 43px;
+        height: 43px;
+
+        &:hover {
+          top: -2px;
+          left: -3px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.circle-of-wow {
+  position: absolute;
+  top: 50px;
+  left: 85px;
+  width: 10px;
+  height: 10px;
+  background: #E47484;
+  z-index: 998;
+  border-radius:1000px;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+
+
+  &.expanded {
+    top: -1000px;
+    left: -1000px;
+    width: 4000px;
+    height: 4000px;
+    border-radius: 0px;
+  }
 }

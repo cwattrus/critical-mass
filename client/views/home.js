@@ -1,13 +1,37 @@
 Template.home.helpers({
-  myAppVariable: function() {
-    return Session.get('myAppVariable');
+  stickers: function() {
+    return 2;
+  },
+  levels: function() {
+    return Levels.find({});
+  },
+  complete: function() {
+    if(this.complete) {
+      return true;
+    }
+    return false;
+  },
+  houses: function() {
+    return Houses.find({});
+  },
+  selected: function() {
+    return Houses.findOne({});
   }
 });
+
+Template.home.events({
+  'click #activate-circle-of-wow' : function(event, template) {
+    $(".circle-of-wow").toggleClass("expanded");
+  },
+  'click .circle-of-wow' : function(event, template) {
+    $(".circle-of-wow").removeClass("expanded");
+  }
+})
 
 Template.houseCard.events({
   'click .house-card' : function(event, template) {
     Router.go('house', {_id: this._id});
-  }
+  },
 })
 
 Template.house.events({

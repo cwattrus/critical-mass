@@ -49,5 +49,5 @@ Template.layout.events({
 Template.layout.helpers({
   'picture' : function(event, template) {
     return userPicture;
-  }
+  },
 });
