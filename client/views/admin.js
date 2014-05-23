@@ -8,7 +8,7 @@ Template.admin.events({
   	Meteor.call('demoteUserFromAdmin', email);
   },
   'click #create-new-house': function(event, template) {
-  	Houses.insert({"name": "Conversation and Activity"});
+  	Houses.insert({"name": "Conversation and Activity", "image": 1});
   }
 });
 

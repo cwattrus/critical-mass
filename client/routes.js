@@ -35,7 +35,7 @@ Router.map(function() {
     data: function() {
       return Houses.findOne({ "_id": this.params._id });
     },
-    template: 'house'
+    template: 'home'
   });
   this.route('connect', {
     path: '/',

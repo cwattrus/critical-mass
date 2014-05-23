@@ -73,6 +73,44 @@ Template.house.events({
 		    });
 		})
 	},
+  'click #edit-house-image' : function(event, template) {
+    var self = this;
+
+    (new PNotify({
+        text: "What image would you like for this house?",
+        icon: 'fa fa-question',
+        hide: false,
+        confirm: {
+            prompt: true
+        },
+        buttons: {
+            closer: false,
+            sticker: false
+        },
+        history: {
+            history: false
+        }
+    })).get().on('pnotify.confirm', function(e, notice, val) {
+      console.log(self);
+      Houses.update({"_id":self._id}, {$set: {"image": val}});
+
+        notice.cancelRemove().update({
+            title: 'Image saved',
+            text: '<img width="100" src="/houses/house' + $('<div/>').text(val).html() + '.png">',
+            icon: 'fa fa-check',
+            type: 'info',
+            hide: true,
+            confirm: {
+                prompt: false,
+              prompt_default: self.name
+            },
+            buttons: {
+                closer: true,
+                sticker: true
+            }
+        });
+    })
+  },
 		'click #edit-house-description' : function(event, template) {
 		var self = this;
 

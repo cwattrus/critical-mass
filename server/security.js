@@ -7,7 +7,7 @@ Houses.allow({
   },
   remove: function() {
     return allowAdmin();
-  }
+  },
 })
 
 Levels.allow({

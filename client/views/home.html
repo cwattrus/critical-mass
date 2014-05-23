@@ -1,7 +1,7 @@
 <template name="home">
   <div class="game-header">
     <div class="brand">
-      <img src="logo_logged_in.png" id="activate-circle-of-wow">
+      <img src="/logo_logged_in.png" id="activate-circle-of-wow">
       <div class="circle-of-wow">
 
       </div>
@@ -30,5 +30,5 @@
   {{#each houses}}
     {{> houseCard this}}
   {{/each}}
-  {{> house selected}}
+  {{> house this}}
 </template>

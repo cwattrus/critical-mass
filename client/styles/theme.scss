@@ -6,7 +6,7 @@
 }
 
 html {
-  overflow: hidden;
+
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
+
   background: #EAFFFC;
 }
 
@@ -117,11 +117,14 @@ h2 {
         margin: 30px auto;
         background: #8DEBD4;
     }
+
+    img {
+      width: 175px;
+    }
 }
 
 
 .house-card {
-    border: 3px solid $SECONDARY_COLOR;
     cursor: pointer;
     display: inline-block;
     font-weight: 300;
@@ -131,6 +134,14 @@ h2 {
     width: 300px;
     text-align: center;
     vertical-align: top;
+    position: relative;
+
+    img {
+        width: 190px;
+        position: absolute;
+        bottom: 0px;
+        left: 51px
+    }
 
     .pre {
         color: #999;
