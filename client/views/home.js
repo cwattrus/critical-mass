@@ -16,7 +16,7 @@ Template.home.helpers({
   },
   selected: function() {
     return Houses.findOne({});
-  }
+  },
 });
 
 Template.home.events({
@@ -25,7 +25,7 @@ Template.home.events({
   },
   'click .circle-of-wow' : function(event, template) {
     $(".circle-of-wow").removeClass("expanded");
-  }
+  },
 })
 
 Template.houseCard.events({
@@ -34,7 +34,51 @@ Template.houseCard.events({
   },
 })
 
+Template.house.helpers({
+  rooms: function() {
+    console.log(Rooms.find({"house": this._id}));
+    return Rooms.find({"house": this._id});
+  },
+})
 Template.house.events({
+  'click #add-room' : function(event, template) {
+    var self = this;
+
+    (new PNotify({
+        text: "What'd you like to call this room?",
+        icon: 'fa fa-question',
+        hide: false,
+        confirm: {
+            prompt: true
+        },
+        buttons: {
+            closer: false,
+            sticker: false
+        },
+        history: {
+            history: false
+        }
+    })).get().on('pnotify.confirm', function(e, notice, val) {
+      console.log(self);
+      Rooms.insert({"title": val, "house": self._id});
+
+        notice.cancelRemove().update({
+            title: 'Room saved',
+            text: 'New room created ' + $('<div/>').text(val).html() + '.',
+            icon: 'fa fa-check',
+            type: 'info',
+            hide: true,
+            confirm: {
+                prompt: false,
+              prompt_default: self.name
+            },
+            buttons: {
+                closer: true,
+                sticker: true
+            }
+        });
+    })
+  },
 	'click #edit-house-name' : function(event, template) {
 		var self = this;
 

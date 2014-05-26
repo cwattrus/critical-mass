@@ -7,6 +7,7 @@
     "fontawesome4": {},
     "typeahead": {},
     "iron-router-progress": {},
-    "marked": {}
+    "marked": {},
+    "jquery-rateit": {}
   }
 }

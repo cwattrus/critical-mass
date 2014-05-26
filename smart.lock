@@ -9,7 +9,8 @@
       "fontawesome4": {},
       "typeahead": {},
       "iron-router-progress": {},
-      "marked": {}
+      "marked": {},
+      "jquery-rateit": {}
     },
     "packages": {
       "iron-router": {
@@ -44,13 +45,18 @@
       },
       "iron-router-progress": {
         "git": "https://github.com/Multiply/iron-router-progress.git",
-        "tag": "v0.3.1",
-        "commit": "3f7900feb4bb70a1289b39a1fdcd1f438c0335b3"
+        "tag": "v0.4.0",
+        "commit": "02f78bdaca4c13d59f548d5a0ce83408c34b56d1"
       },
       "marked": {
         "git": "https://github.com/chuangbo/meteor-marked.git",
         "tag": "v0.3.2",
         "commit": "850f63135cdeb05344c420bd586fd8af9cab75df"
+      },
+      "jquery-rateit": {
+        "git": "https://github.com/dandv/meteor-jquery-rateit.git",
+        "tag": "v1.0.20-2",
+        "commit": "c83897aabbddf990430c3515a69336853cf175c5"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
