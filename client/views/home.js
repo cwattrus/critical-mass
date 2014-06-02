@@ -38,6 +38,13 @@ Template.house.helpers({
   rooms: function() {
     return Rooms.find({"house": this._id});
   },
+  team: function() {
+    console.log(this.team);
+    console.log(Houses.find({"_id": this._id}).team);
+    if(this.team) {
+        return People.find({"_id": {$in: this.team}});
+    }
+  },
 })
 Template.house.events({
   'click #add-room' : function(event, template) {
@@ -51,7 +58,6 @@ Template.house.events({
     notifier.callback = function(self, val) {Rooms.insert({"title": val, "house": self._id});};
     showANotifier(notifier, self);
   },
-
 	'click #edit-house-name' : function(event, template) {
 		var self = this;
     var notifier = new Object;
@@ -85,6 +91,24 @@ Template.house.events({
     notifier.callback = function(self, description) {Houses.update({"_id":self._id}, {$set: {"description": description}})};
     var description = showANotifier(notifier, self);
 	},
+  'click #add-team-member' : function(event, template) {
+    var self = this;
+    var notifier = new Object;
+    notifier.text = "Add team member by email!";
+    notifier.multiline = false;
+    notifier.placeholder = "";
+    notifier.confirmation = "Person added";
+    notifier.confirmationDetail = "Added ";
+    notifier.callback = function(self, val) {
+      var person = People.findOne({"email": val});
+      if(person) {
+          console.log("person " + person.name + " found!");
+          Houses.update({"_id":self._id}, {$push: {"team": person._id}});
+      }
+      else throw new Meteor.Error(403, "Person doesn't exist. Add them in admin!");
+    };
+    showANotifier(notifier, self);
+  },
 })
 
 function showANotifier(notifier, self) {
@@ -104,21 +128,30 @@ function showANotifier(notifier, self) {
       history: {
           history: false
       }
-  })).get().on('pnotify.confirm', function(e, notice, val) {
-      notifier.callback(self, val);
-      notice.cancelRemove().update({
-          title: notifier.confirmation,
-          text: notifier.confirmationDetail + $('<div/>').text(val).html() + '.',
-          icon: 'fa fa-check',
-          type: 'info',
-          hide: true,
-          confirm: {
-              prompt: false
-          },
-          buttons: {
-              closer: true,
-              sticker: true
-          }
-      });
+  })).get().on('pnotify.confirm', function(error, notice, val) {
+      try {
+        notifier.callback(self, val);
+        notice.cancelRemove().update({
+            title: notifier.confirmation,
+            text: notifier.confirmationDetail + $('<div/>').text(val).html() + '.',
+            icon: 'fa fa-check',
+            type: 'info',
+            hide: true,
+            confirm: {
+                prompt: false
+            },
+            buttons: {
+                closer: true,
+                sticker: true
+            }
+        });
+      }
+      catch(err) {
+          new PNotify({
+            title: 'Oh No!',
+            text: err.message,
+            type: 'error'
+          });
+      }
   })
 }

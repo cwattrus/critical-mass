@@ -1,35 +1,25 @@
-Template.admin.events({
-  'click #promote-to-admin': function(event, template) {
-  	var email = template.find("#user_in_question").value;
-  	Meteor.call('promoteUserToAdmin', email);
-  },
-  'click #demote-from-admin': function(event, template) {
-    var email = template.find("#user_in_question").value;
-  	Meteor.call('demoteUserFromAdmin', email);
-  },
-  'click #create-new-house': function(event, template) {
-  	Houses.insert({"name": "Conversation and Activity", "image": 1});
-  },
-  'click #create-new-person': function(event, template) {
+Template.person.events({
+  'click #edit-person-name' : function(event, template) {
     var self = this;
     var notifier = new Object;
-    notifier.text = "What is this person's name?";
+    notifier.text = "Their name changed?";
     notifier.multiline = false;
-    notifier.placeholder = "Full name";
+    notifier.placeholder = self.name;
     notifier.confirmation = "Name saved";
-    notifier.confirmationDetail = "Now available - ";
-    notifier.callback = function(self, val) {People.insert({"name": val, "image": "profile.png"});};
+    notifier.confirmationDetail = "Now named - ";
+    notifier.callback = function(self, val) {People.update({"_id":self._id}, {$set: {"name": val}});};
     showANotifier(notifier, self);
-  }
-
-});
-
-Template.admin.helpers({
-	'houses': function() {
-		return Houses.find({});
-	},
-  'people': function() {
-    return People.find({});
+  },
+  'click #edit-person-email' : function(event, template) {
+    var self = this;
+    var notifier = new Object;
+    notifier.text = "Give " + self.name + " an image with their gravatar email.";
+    notifier.multiline = false;
+    notifier.placeholder = self.email;
+    notifier.confirmation = "Email saved";
+    notifier.confirmationDetail = "Email set to ";
+    notifier.callback = function(self, val) {People.update({"_id":self._id}, {$set: {"email": val, "image": Gravatar.imageUrl(val)}});};
+    showANotifier(notifier, self);
   }
 })
 

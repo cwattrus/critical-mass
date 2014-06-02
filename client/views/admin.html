@@ -8,4 +8,9 @@
   	{{#each houses}}
   		{{> houseCard this}}
   	{{/each}}
+		<h2>People</h2>
+		<button id="create-new-person">New Person</button>
+		{{#each people}}
+			{{> person this}}
+		{{/each}}
 </template>

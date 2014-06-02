@@ -8,6 +8,7 @@
     "typeahead": {},
     "iron-router-progress": {},
     "marked": {},
-    "jquery-rateit": {}
+    "jquery-rateit": {},
+    "gravatar": {}
   }
 }

@@ -12,3 +12,8 @@ Meteor.publish('levels', function() {
   var levels = Levels.find({});
   return levels;
 });
+
+Meteor.publish('people', function() {
+  var people = People.find({});
+  return people;
+});

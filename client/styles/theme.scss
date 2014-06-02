@@ -175,6 +175,13 @@ h2 {
   width: 70%;
 }
 
+.rooms {
+  width: 80%;
+}
+.people {
+  width: 20%;
+}
+
 .world {
   img.world {
     position: absolute;
@@ -356,8 +363,8 @@ h2 {
 
 .room {
   display: inline-block;
-  padding: 10px 25px;
-  margin: 20px;
+  padding: 5px 20px;
+  margin: 15px;
   width: 250px;
   height: 300px;
   float: left;
@@ -365,6 +372,10 @@ h2 {
   /* Rectangle 2: */
   background: #f3f3f3;
   vertical-align: top;
+
+  &:first-child {
+      margin-left: 0px;
+  }
 
   h1 {
     color: #F1596A;

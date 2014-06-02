@@ -65,7 +65,30 @@ Template.room.events({
     notifier.callback = function(self, val) {Rooms.update({"_id":self._id}, {$set: {"description": val}});};
     showANotifier(notifier, self);
   },
+  'click #add-room-team-member' : function(event, template) {
+    var self = this;
+    // showMingleTeam(self);
+    var notifier = new Object;
+    notifier.text = "Add team member by email!";
+    notifier.multiline = false;
+    notifier.placeholder = self.name;
+    notifier.confirmation = "Person added";
+    notifier.confirmationDetail = "Added ";
+    notifier.callback = function(self, val) {
+      var person = People.findOne({"email": val});
+      if(person) {
+          console.log("person " + person.name + " found!");
+          Rooms.update({"_id":self._id}, {$push: {"team": person._id}});
+      }
+      else throw new Meteor.Error(403, "Person doesn't exist. Add them in admin!");
+    };
+    showANotifier(notifier, self);
+  },
 })
+
+function showMingleTeam(self) {
+
+}
 
 function showANotifier(notifier, self) {
   (new PNotify({

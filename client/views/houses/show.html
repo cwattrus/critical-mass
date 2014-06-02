@@ -25,12 +25,21 @@
 				{{/markdown}}
 				{{#if isAdmin}}<span id="edit-house-description" class="editable">*</span>{{/if}}
 			</div>
+			{{#if isAdmin}}<button id="add-team-member" >+ Team Member</button>{{/if}}
 			{{#if isAdmin}}<button id="add-room" >New Room</button>{{/if}}
 		</div>
 		<div class="clear"></div>
-		{{#each rooms}}
-			{{> room this}}
-		{{/each}}
+		<div class="pull-left people">
+			{{#each team}}
+				{{> person this}}
+			{{/each}}
+		</div>
+		<div class="pull-right rooms">
+			{{#each rooms}}
+				{{> room this}}
+			{{/each}}
+		</div>
+
 	</div>
 	{{#if isAdmin}}<button id="edit-house-image">Edit Image</button>{{/if}}
 </template>

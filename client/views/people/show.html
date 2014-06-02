@@ -1,0 +1,5 @@
+<template name="person">
+  <img  src="{{this.image}}" class="profile">
+  <div class="person-full-name">{{this.name}}{{#if isAdmin}}<span id="edit-person-name" class="editable">*</span>{{/if}}</div>
+  {{#if isAdmin}}<button id="edit-person-email">Add gravatar</button>{{/if}}
+</template>
