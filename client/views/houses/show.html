@@ -3,26 +3,34 @@
 		<div class="pre">HOUSE OF</div>
 		<div class="title">{{this.name}}</div>
 		<img class="" src="/houses/house{{this.image}}.png" >
-
 	</div>
 </template>
 
 <template name="house">
 	<div class="house">
-		<img class="" src="/houses/house{{this.image}}.png" >
-		<div class="pre">HOUSE OF</div>
-		<div class="title">{{this.name}}{{#if isAdmin}}<span id="edit-house-name" class="editable">*</span>{{/if}}</div>
-		<div class="seperator"></div>
-		{{#if isAdmin}}<button id="edit-house-image">Edit Image</button>{{/if}}
-		<div class="description">
-			{{#markdown}}
-				{{this.description}}
-			{{/markdown}}
-			{{#if isAdmin}}<span id="edit-house-description" class="editable">*</span>{{/if}}
+		<div class="pull-left house-image">
+			<center>
+				<a href="{{pathFor 'home'}}" class="button"><i class="fa fa-arrow-left"></i> Houses</a>
+				<img class="" src="/houses/house{{this.image}}.png" >
+			</center>
 		</div>
-		{{#if isAdmin}}<button id="add-room" >New Room</button>{{/if}}
+		<div class="pull-right house-details">
+			<div class="pre">HOUSE OF</div>
+			<div class="title">{{this.name}}{{#if isAdmin}}<span id="edit-house-name" class="editable">*</span>{{/if}}</div>
+			<div class="seperator"></div>
+
+			<div class="description">
+				{{#markdown}}
+					{{this.description}}
+				{{/markdown}}
+				{{#if isAdmin}}<span id="edit-house-description" class="editable">*</span>{{/if}}
+			</div>
+			{{#if isAdmin}}<button id="add-room" >New Room</button>{{/if}}
+		</div>
+		<div class="clear"></div>
 		{{#each rooms}}
 			{{> room this}}
 		{{/each}}
 	</div>
+	{{#if isAdmin}}<button id="edit-house-image">Edit Image</button>{{/if}}
 </template>

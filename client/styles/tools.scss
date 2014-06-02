@@ -1,10 +1,12 @@
 @import "constants";
 
 .pull-right {
+	display: inline-block;
 	float: right;
 }
 
 .pull-left {
+	display: inline-block;
 	float: left;
 }
 

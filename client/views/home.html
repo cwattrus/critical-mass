@@ -1,20 +1,20 @@
 <template name="home">
   <div class="game-header">
-    <div class="brand">
+    <!-- <div class="brand">
       <img src="/logo_logged_in.png" id="activate-circle-of-wow">
       <div class="circle-of-wow">
 
       </div>
     </div>
-    <div class="profile">
-      <h2>Hello, {{user.profile.name}}</h2>
+    <div class="profile"> -->
+      <!-- <h2>Hello, {{user.profile.name}}</h2>
       <ul class="levels">
         {{#each levels}}
           <li class="level {{#if complete}}completed{{/if}}">{{this.title}}</li>
         {{/each}}
       </ul>
-    </div>
-    <div class="stickers">
+    </div> -->
+    <!-- <div class="stickers">
       <div class="holder">
         <div class="sticker"></div>
       </div>
@@ -25,10 +25,12 @@
 
       </div>
       <p>You have {{stickers}} of 3 left</p>
-    </div>
+    </div> -->
   </div>
+  <center>
+    <p>Take a look at the different things we're working on. Rate each idea. Take us to the next level.</p>
+  </center>
   {{#each houses}}
     {{> houseCard this}}
   {{/each}}
-  {{> house this}}
 </template>

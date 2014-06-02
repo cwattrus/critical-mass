@@ -14,8 +14,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-
-  background: #EAFFFC;
+  padding-top: 50px;
 }
 
 button {
@@ -114,7 +113,7 @@ h2 {
     .seperator {
         height: 4px;
         width: 150px;
-        margin: 30px auto;
+        margin: 30px 0;
         background: #8DEBD4;
     }
 
@@ -123,8 +122,12 @@ h2 {
     }
 }
 
+.clear {
+  clear: both;
+}
 
 .house-card {
+    background: #f3f3f3;
     cursor: pointer;
     display: inline-block;
     font-weight: 300;
@@ -164,16 +167,24 @@ h2 {
     }
 }
 
+.house-image {
+  width: 30%;
+}
+.house-details {
+  text-align: left;
+  width: 70%;
+}
+
 .world {
   img.world {
     position: absolute;
-    bottom: -500px;
+    bottom: -172px;
     z-index: 0;
     width: 1000px;
   }
 
   .start {
-    margin: 100px auto 0 auto;
+    margin: 10px auto 0 auto;
     position: relative;
     height: 600px;
 
@@ -345,6 +356,42 @@ h2 {
 
 .room {
   display: inline-block;
-  width: 150px;
-  border: 3px solid blue;
+  padding: 10px 25px;
+  margin: 20px;
+  width: 250px;
+  height: 300px;
+  float: left;
+  position: relative;
+  /* Rectangle 2: */
+  background: #f3f3f3;
+  vertical-align: top;
+
+  h1 {
+    color: #F1596A;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom:10px;
+  }
+
+  .rateit {
+    position: absolute;
+    bottom: 20px;
+    right: 34%;
+    cursor: pointer;
+  }
+}
+
+.button {
+  background: #5bb2ef;
+  width: 134px;
+  display: block;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  margin: 10px auto;
+}
+
+#iron-router-progress {
+    background-color : #EF5B6C;
+    box-shadow       : none;
 }

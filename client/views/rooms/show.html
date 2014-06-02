@@ -1,7 +1,7 @@
 <template name="room">
   <div class="room">
-    {{this.title}}
-    <!-- {{this.description}} -->
-    <div class="rateit"  data-rateit-value="{{rating}}" data-rateit-ispreset="true" data-rateit-resetable="false"></div>
+    <h1>{{this.title}}{{#if isAdmin}}<span id="edit-room-name" class="editable">*</span>{{/if}}</h1>
+    <p>{{this.description}}{{#if isAdmin}}<span id="edit-room-description" class="editable">*</span>{{/if}}</p>
+    <div class="rateit"  data-rateit-value="{{rating}}" data-rateit-ispreset="true" data-rateit-resetable="false" data-rateit-readonly="{{#if rated}}true{{else}}false{{/if}}"></div>
   </div>
 </template>

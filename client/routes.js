@@ -22,6 +22,10 @@ Router.map(function() {
     path: '/admin',
     template: 'admin'
   });
+  this.route('intro', {
+    path: '/intro',
+    template: 'intro'
+  });
   this.route('welcome', {
     path: '/welcome',
     template: 'welcome'
