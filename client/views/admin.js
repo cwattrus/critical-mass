@@ -1,7 +1,22 @@
 Template.admin.events({
   'click #promote-to-admin': function(event, template) {
   	var email = template.find("#user_in_question").value;
-  	Meteor.call('promoteUserToAdmin', email);
+  	Meteor.call('promoteUserToAdmin', email, function(error, result) {
+      if(error.message) {
+        new PNotify({
+          title: 'Oh No!',
+          text: error.message,
+          type: 'error'
+        });
+      }
+      else {
+        new PNotify({
+          title: 'Yay!',
+          text: email + " is now an admin!",
+          type: 'info'
+        });
+      }
+    });
   },
   'click #demote-from-admin': function(event, template) {
     var email = template.find("#user_in_question").value;
@@ -30,7 +45,7 @@ Template.admin.helpers({
 	},
   'people': function() {
     return People.find({});
-  }
+  },
 })
 
 function showANotifier(notifier, self) {

@@ -3,6 +3,11 @@
 	<input type="text" id="user_in_question" placeholder="Email...">
   	<button id="promote-to-admin">Make user admin</button>
   	<button id="demote-from-admin" class="secondary">Demote</button>
+		<div class="people-in-admin">
+		{{#each admin}}
+			{{> person this}}
+		{{/each}}
+	</div>
   	<h2>Houses</h2>
   	<button id="create-new-house">New House</button>
   	{{#each houses}}
@@ -10,7 +15,9 @@
   	{{/each}}
 		<h2>People</h2>
 		<button id="create-new-person">New Person</button>
+		<div class="people-in-admin">
 		{{#each people}}
 			{{> person this}}
 		{{/each}}
+	</div>
 </template>

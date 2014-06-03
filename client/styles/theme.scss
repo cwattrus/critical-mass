@@ -131,7 +131,7 @@ h2 {
     cursor: pointer;
     display: inline-block;
     font-weight: 300;
-    margin: 15px 10px;
+    margin: 15px 5px 15px 10px;
     padding: 40px 24px;
     height: 400px;
     width: 280px;
@@ -187,6 +187,21 @@ h2 {
   }
 
   .person {
+    padding: 15px 0 0 0;
+    text-align: left;
+
+    .person-full-name {
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 10px;
+      padding-left: 10px;
+    }
+  }
+}
+
+.people-in-admin {
+  .person {
+    display: inline-block;
     padding: 15px 0 0 0;
     text-align: left;
 
