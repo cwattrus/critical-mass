@@ -1,5 +1,14 @@
 <template name="person">
-  <img  src="{{this.image}}" class="profile">
-  <div class="person-full-name">{{this.name}}{{#if isAdmin}}<span id="edit-person-name" class="editable">*</span>{{/if}}</div>
-  {{#if isAdmin}}<button id="edit-person-email">Add gravatar</button>{{/if}}
+  <div class="person">
+    <img  src="{{this.image}}" class="profile">
+    <div class="person-full-name">{{this.name}}{{#if isAdmin}}<span id="edit-person-name" class="editable">*</span>{{/if}}</div>
+    <br />{{#if isAdmin}}<button id="edit-person-email">Add gravatar</button>{{/if}}
+  </div>
+</template>
+
+<template name="member">
+  <div class="person">
+    <img  src="{{this.image}}" class="profile">
+    <div class="person-full-name">{{this.name}}</div>
+  </div>
 </template>

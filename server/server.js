@@ -1,10 +1,13 @@
-// Accounts.validateNewUser(function (user) {
-//   if (user.services.google.email.toString().indexOf('@thoughtworks.com')!= -1)
-//     return true;
-//   throw new Meteor.Error(403, "Join with your ThoughtWorks Google Account!");
-// });
+Accounts.validateNewUser(function (user) {
+  if (user.services.google.email.toString().indexOf('@thoughtworks.com')!= -1)
+    return true;
+  throw new Meteor.Error(403, "Join with your ThoughtWorks Google Account!");
+});
 
 Meteor.methods({
+  usersEmailAddress: function () {
+    return Meteor.user().services.google.email.toString();
+  },
   promoteUserToAdmin: function (email) {
     if(Meteor.user().profile.admin) {
       var userToPromote = userFromEmail(email);

@@ -35,6 +35,20 @@ Template.room.events({
   'click .rateit' : function(event, template) {
     var room = this;
     Meteor.users.update({_id:Meteor.user()._id}, {$push:{"profile.ratings":{"room":room._id, "rating": template.find(".rateit-range").getAttribute("aria-valuenow")}}});
+    if(People.findOne({"userID": Meteor.user()._id})) {
+      var person = People.findOne({"userID": Meteor.user()._id});
+      console.log(person._id);
+      People.update({"_id": person._id}, {$push: {"houses": room.house}});
+    }
+    else {
+      var newPerson = People.insert({"userID": Meteor.user()._id, "name": Meteor.user().profile.name, "houses": [room.house]});
+      console.log(newPerson);
+      Meteor.call('usersEmailAddress', function(error, result) {
+          if(result) {
+            People.update({"_id": newPerson}, {$set: {"email": result, "image": Gravatar.imageUrl(result)}});
+          }
+      });
+    }
   },
   'click #edit-room-name' : function(event, template) {
     var self = this;

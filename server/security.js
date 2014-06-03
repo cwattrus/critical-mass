@@ -36,10 +36,10 @@ Rooms.allow({
 
 People.allow({
   insert: function() {
-    return allowAdmin();
+    return true;
   },
   update: function() {
-    return allowAdmin();
+    return true;
   },
   remove: function() {
     return allowAdmin();

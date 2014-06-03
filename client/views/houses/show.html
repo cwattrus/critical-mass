@@ -12,6 +12,7 @@
 			<center>
 				<a href="{{pathFor 'home'}}" class="button"><i class="fa fa-arrow-left"></i> Houses</a>
 				<img class="" src="/houses/house{{this.image}}.png" >
+				{{#if isAdmin}}<button id="edit-house-image">Edit Image</button>{{/if}}
 			</center>
 		</div>
 		<div class="pull-right house-details">
@@ -30,8 +31,15 @@
 		</div>
 		<div class="clear"></div>
 		<div class="pull-left people">
+			<div class="pre"><strong>MINGLE</strong> TEAM</div>
 			{{#each team}}
 				{{> person this}}
+			{{/each}}
+			<div class="pre"><strong>EXTENDED</strong> TEAM
+			<p><small>ThoughtWorkers who've voted on features in this house.</small></p></div>
+
+			{{#each members}}
+				{{> member this}}
 			{{/each}}
 		</div>
 		<div class="pull-right rooms">
@@ -39,7 +47,5 @@
 				{{> room this}}
 			{{/each}}
 		</div>
-
 	</div>
-	{{#if isAdmin}}<button id="edit-house-image">Edit Image</button>{{/if}}
 </template>

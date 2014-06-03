@@ -39,11 +39,13 @@ Template.house.helpers({
     return Rooms.find({"house": this._id});
   },
   team: function() {
-    console.log(this.team);
-    console.log(Houses.find({"_id": this._id}).team);
     if(this.team) {
         return People.find({"_id": {$in: this.team}});
     }
+  },
+  members: function() {
+    var houseID = this._id;
+    return People.find({"houses": houseID})
   },
 })
 Template.house.events({
