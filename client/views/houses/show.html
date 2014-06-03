@@ -37,10 +37,11 @@
 			{{/each}}
 			<div class="pre"><strong>EXTENDED</strong> TEAM
 			<p><small>ThoughtWorkers who've voted on features in this house.</small></p></div>
-
-			{{#each members}}
-				{{> member this}}
-			{{/each}}
+			<div class="members">
+				{{#each members}}
+					{{> member this}}
+				{{/each}}
+			</div>
 		</div>
 		<div class="pull-right rooms">
 			{{#each rooms}}

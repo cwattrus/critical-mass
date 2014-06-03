@@ -13,6 +13,12 @@ Router.onBeforeAction(function() {
           this.redirect("home");
         }
       }
+    } else if(Meteor.user() && this.route.name != "admin" && this.route.name != "intro") {
+      if(Meteor.user().profile) {
+          if(!Meteor.user().profile.returnedUser) {
+            this.redirect("intro");
+          }
+      };
     }
   }
 }, {except: ['welcome','connect','config']});

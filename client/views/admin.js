@@ -39,6 +39,12 @@ Template.admin.events({
 
 });
 
+Template.intro.events({
+  'click #start_user' : function() {
+    Meteor.users.update({_id:Meteor.user()._id}, {$set:{"profile.returnedUser":true}});
+  }
+})
+
 Template.admin.helpers({
 	'houses': function() {
 		return Houses.find({});
